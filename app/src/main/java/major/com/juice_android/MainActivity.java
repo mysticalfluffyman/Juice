@@ -15,4 +15,6 @@ public class MainActivity extends AppCompatActivity {
     {
       int a=4;
     }
+
+    public void pushIt(){ int b=666;}
 }

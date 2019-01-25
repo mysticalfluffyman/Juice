@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgMain">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/albumArtNowplaying"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorAccent"
+            android:foregroundGravity="center"
+            android:src="@drawable/ic_audiotrack_black_24dp" />
+
+        <TextView
+            android:id="@+id/songNameNowplaying"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:text="The Sky Moves Sideways"
+            android:textColor="@color/colorText1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/artistNameNowplaying"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:text="Porcupine Tree"
+            android:textColor="@color/colorText1"
+            android:textSize="15sp" />
+
+        <RatingBar
+            android:id="@+id/ratingNowplaying"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_grade_black_24dp" />
+
+
+        <ImageView
+            android:id="@+id/navigationBar"
+            android:layout_width="600dp"
+            android:layout_height="50dp"
+            android:background="@color/colorText1" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:src="@drawable/ic_shuffle_black_24dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="5"
+                android:src="@drawable/ic_skip_previous_black_24dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+
+                android:layout_weight="5"
+                android:src="@drawable/ic_play_circle_filled_black_24dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+
+                android:layout_weight="5"
+                android:src="@drawable/ic_skip_next_black_24dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+
+                android:layout_weight="5"
+
+                android:src="@drawable/ic_arrow_downward_black_24dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

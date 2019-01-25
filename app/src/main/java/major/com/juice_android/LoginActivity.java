@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity
 {
     private EditText usernameTxt, passwordTxt;
     private Button loginButton;
-    private TextView goToRegistrationText;
+    private Button goToRegistrationText;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -29,8 +29,7 @@ public class LoginActivity extends AppCompatActivity
         usernameTxt = (EditText)findViewById(R.id.usernameText);
         passwordTxt = (EditText)findViewById(R.id.passwordText);
         loginButton = (Button)findViewById(R.id.loginButton);
-        goToRegistrationText = (TextView)findViewById(R.id.goToRegistration);
-
+        goToRegistrationText = (Button) findViewById(R.id.goToRegistration);
         loginButton.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgMain"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/albumArt"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/skymovessideways" />
+        <TextView
+            android:id="@+id/songTitle"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/albumArt"
+            android:text="The Sky Moves Sideways"
+            android:textColor="@color/colorText1"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/artistName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/songTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/albumArt"
+            android:text="Porcupine Tree"
+            android:textColor="@color/colorText1"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/songTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/artistName"
+            android:text="34:44"
+            android:textColor="@color/colorText1"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/downloadButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/songTitle"
+            android:src="@drawable/ic_arrow_downward_black_24dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/albumArt2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/skymovessideways" />
+
+        <TextView
+            android:id="@+id/songTitle2"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/albumArt2"
+            android:text="Taal ko Paani"
+            android:textColor="@color/colorText1"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/artistName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/songTitle2"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/albumArt2"
+            android:text="Nepathya"
+            android:textColor="@color/colorText1"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/duration2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/songTitle2"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/artistName2"
+            android:text="4:44"
+            android:textColor="@color/colorText1"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/downloadButton2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+
+            android:layout_toRightOf="@id/songTitle2"
+            android:src="@drawable/ic_arrow_downward_black_24dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/albumArt3"
+            android:layout_width="50dp"
+
+            android:layout_height="50dp"
+            android:src="@drawable/ic_audiotrack_black_24dp" />
+
+        <TextView
+            android:id="@+id/songTitle3"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/albumArt3"
+            android:text="Nischal"
+            android:textColor="@color/colorText1"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/artistName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/songTitle3"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/albumArt3"
+            android:text="Albatross"
+            android:textColor="@color/colorText1"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/duration3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/songTitle3"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/artistName3"
+            android:text="4:01"
+            android:textColor="@color/colorText1"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/downloadButton3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/songTitle3"
+            android:src="@drawable/ic_arrow_downward_black_24dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

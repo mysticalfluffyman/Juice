@@ -8,5 +8,6 @@
     <color name="colorText1">#ffffff</color>
     <color name="colorHint">#d7b5b5</color>
     <color name="colorForm">#646262</color>
+    <color name="colorMusicButtons">#ffffff</color>
 
 </resources>

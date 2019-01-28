@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity
 
                 if (!loginResponse.isError())
                 {
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 }
                 else
@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity
 
     public void goToRegistrationPage()
     {
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
         startActivity(intent);
         finish();
     }

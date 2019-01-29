@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private HomeFragment homeFragment;
     private SearchFragment searchFragment;
+    private BrowseFragment browseFragment;
     private DownloadsFragment downloadsFragment;
     private PlaylistsFragment playlistsFragment;
 
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         homeFragment = new HomeFragment();
         searchFragment = new SearchFragment();
+        browseFragment = new BrowseFragment();
         downloadsFragment = new DownloadsFragment();
         playlistsFragment = new PlaylistsFragment();
 
@@ -58,6 +61,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_home:
                 loadFragment(homeFragment);
                 return true;
+
+            case R.id.navigation_browse:
+                loadFragment(browseFragment);
+                return true;
+
             case R.id.navigation_search:
                 loadFragment(searchFragment);
                 return true;
@@ -71,4 +79,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                    return false;
         }
     }
+
 }

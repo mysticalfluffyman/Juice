@@ -1,52 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:background="@drawable/bg2"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/usernameText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="-10dp"
-        android:hint="Username"
-        android:inputType="text" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/passwordText"
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_account_circle_black_24dp" />
+
+        <EditText
+            android:id="@+id/usernameText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/textfield_style"
+            android:hint="Username"
+            android:inputType="text"
+            android:textColor="@color/colorText1"
+            android:padding="5dp"
+            android:textColorHint="#fff" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:orientation="horizontal">
 
-    <LinearLayout
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_lock_black_24dp" />
+
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/textfield_style"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textColor="@color/colorText1"
+            android:textColorHint="#fff" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_styles"
+        android:text="Login"
+        android:textColor="@color/colorText1"
+        android:textSize="20sp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:layout_marginTop="20dp"
+        android:text="Dont Have an Account ?"
+        android:textColor="@color/colorText1" />
 
+    <Button
+        android:id="@+id/goToRegistration"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_styles"
+        android:text="Register!!"
+        android:textColor="@color/colorText1"
+        android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="#000" />
-
-        <Button
-            android:id="@+id/goToRegistration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register!!"
-            android:textColor="#000" />
-    </LinearLayout>
 
 </LinearLayout>

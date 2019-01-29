@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#2B2B2B"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        app:cardMaxElevation="2dp"
+        app:cardElevation="1dp"
+        android:padding="5dp"
+        android:layout_centerInParent="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:id="@+id/AlbumCover"
+                android:padding="8dp"
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/SongName"
+                android:layout_below="@id/AlbumCover"
+                android:textAlignment="center"
+                android:hint="Song Name"
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ArtistName"
+                android:textAlignment="center"
+                android:layout_below="@id/SongName"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

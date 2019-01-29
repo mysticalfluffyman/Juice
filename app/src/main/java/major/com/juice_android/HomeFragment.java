@@ -6,112 +6,58 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import java.util.List;
 
-import java.util.ArrayList;
-
+import major.com.juice_android.api.RetrofitClient;
+import major.com.juice_android.model.Song;
+import major.com.juice_android.model.SongResponse;
 import major.com.juice_android.viewadapter.ViewAdapterHome;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-import static android.content.ContentValues.TAG;
+public class HomeFragment extends Fragment
+{
+    RecyclerView mostplayedView, trendingView, recentlyaddedView, recommendedsongsView, recommendedartistsView, mostratedView;
+    private ViewAdapterHome adapterHome;
+    private List<Song> songList;
 
-public class HomeFragment extends Fragment {
-    private ArrayList<String> artistname = new ArrayList<>();
-    private ArrayList<String> songname = new ArrayList<>();
-    private ArrayList<String> coverimage = new ArrayList<>();
-
-    RecyclerView mostplayed,trending,recentlyadded,recommendedsongs,recommendedartists,mostrated;
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        loadstuff();
-        View rootview = inflater.inflate(R.layout.fragment_home, container, false);
-        mostplayed= rootview.findViewById(R.id.mostplayed);
-        trending = rootview.findViewById(R.id.trending);
-        recentlyadded = rootview.findViewById(R.id.recentlyadded);
-        recommendedsongs = rootview.findViewById(R.id.recommendedsongs);
-        recommendedartists = rootview.findViewById(R.id.recommendedartists);
-        mostrated = rootview.findViewById(R.id.mostratedplaylist);
-
-        initRecyclerView_mostplayed();
-        initRecyclerView_trending();
-        initRecyclerView_recentlyadded();
-        initRecyclerView_recommendedsongs();
-        initRecyclerView_recommendedartists();
-        initRecyclerView_mostrated();
-
-
-        return rootview;
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
-    private void loadstuff() {
-        artistname.add("tool");
-        songname.add("third eye");
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+    {
+        super.onViewCreated(view, savedInstanceState);
 
-        artistname.add("tool");
-        songname.add("fourth eye");
+        mostplayedView = view.findViewById(R.id.mostplayed);
+        LinearLayoutManager horizontalRecycler = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
+        mostplayedView.setLayoutManager(horizontalRecycler);
 
-        artistname.add("tool");
-        songname.add("fifth eye");
+        Call<SongResponse> call = RetrofitClient.getInstance().getApi().getSongs();
 
-        artistname.add("tool");
-        songname.add("sixth eye");
+        call.enqueue(new Callback<SongResponse>()
+        {
+            @Override
+            public void onResponse(Call<SongResponse> call, Response<SongResponse> response)
+            {
+                songList = response.body().getSongs();
+                adapterHome = new ViewAdapterHome(getActivity(), songList);
+                mostplayedView.setAdapter(adapterHome);
+            }
 
-        artistname.add("tool");
-        songname.add("seventh eye");
+            @Override
+            public void onFailure(Call<SongResponse> call, Throwable t)
+            {
 
-        artistname.add("tool");
-        songname.add("eighth eye");
-
-
-    }
-    private void initRecyclerView_mostplayed() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        mostplayed.setLayoutManager(linearLayoutManager);
-        ViewAdapterHome viewAdapterRecent = new ViewAdapterHome(this.getContext(), artistname, songname);
-        mostplayed.setAdapter(viewAdapterRecent);
-        Log.d(TAG,"chelsea1");
-    }
-    private void initRecyclerView_trending(){
-        LinearLayoutManager linearLayoutManagera=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
-        trending.setLayoutManager(linearLayoutManagera);
-        ViewAdapterHome viewAdaptermostplayeda=new ViewAdapterHome(this.getContext(),artistname,songname);
-        trending.setAdapter(viewAdaptermostplayeda);
-        Log.d(TAG,"chelsea2");
-
-    }
-    private void initRecyclerView_recentlyadded(){
-        LinearLayoutManager linearLayoutManagera=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
-        recentlyadded.setLayoutManager(linearLayoutManagera);
-        ViewAdapterHome viewAdaptermostplayeda=new ViewAdapterHome(this.getContext(),artistname,songname);
-        recentlyadded.setAdapter(viewAdaptermostplayeda);
-        Log.d(TAG,"chelsea3");
-
-    }
-    private void initRecyclerView_recommendedsongs(){
-        LinearLayoutManager linearLayoutManagera=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
-        recommendedsongs.setLayoutManager(linearLayoutManagera);
-        ViewAdapterHome viewAdaptermostplayeda=new ViewAdapterHome(this.getContext(),artistname,songname);
-        recommendedsongs.setAdapter(viewAdaptermostplayeda);
-        Log.d(TAG,"chelsea4");
-
-    }
-    private void initRecyclerView_recommendedartists(){
-        LinearLayoutManager linearLayoutManagera=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
-        recommendedartists.setLayoutManager(linearLayoutManagera);
-        ViewAdapterHome viewAdaptermostplayeda=new ViewAdapterHome(this.getContext(),artistname,songname);
-        recommendedartists.setAdapter(viewAdaptermostplayeda);
-        Log.d(TAG,"chelsea5");
-
-    }
-    private void initRecyclerView_mostrated(){
-        LinearLayoutManager linearLayoutManagera=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
-        mostrated.setLayoutManager(linearLayoutManagera);
-        ViewAdapterHome viewAdaptermostplayeda=new ViewAdapterHome(this.getContext(),artistname,songname);
-        mostrated.setAdapter(viewAdaptermostplayeda);
-        Log.d(TAG,"chelsea6");
-
+            }
+        });
     }
 }

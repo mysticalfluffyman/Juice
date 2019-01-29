@@ -24,14 +24,14 @@
                 android:src="@drawable/ic_launcher_background"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:id="@+id/AlbumCover"
+                android:id="@+id/albumCover"
                 android:padding="8dp"
                 />
             <TextView
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/SongName"
-                android:layout_below="@id/AlbumCover"
+                android:layout_below="@id/albumCover"
                 android:textAlignment="center"
                 android:hint="Song Name"
                 />

@@ -2,9 +2,11 @@ package major.com.juice_android.api;
 
 import major.com.juice_android.model.DefaultResponse;
 import major.com.juice_android.model.LoginResponse;
+import major.com.juice_android.model.SongResponse;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Api
@@ -25,5 +27,8 @@ public interface Api
       @Field("username") String username,
       @Field("password") String password
     );
+
+    @GET("allsongs")
+    Call<SongResponse> getSongs();
 
 }

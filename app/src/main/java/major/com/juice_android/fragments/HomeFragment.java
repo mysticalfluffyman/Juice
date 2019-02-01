@@ -1,4 +1,4 @@
-package major.com.juice_android;
+package major.com.juice_android.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.List;
 
+import major.com.juice_android.R;
 import major.com.juice_android.api.RetrofitClient;
 import major.com.juice_android.model.Song;
 import major.com.juice_android.model.SongResponse;

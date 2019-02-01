@@ -1,16 +1,21 @@
 package major.com.juice_android;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import major.com.juice_android.fragments.BrowseFragment;
+import major.com.juice_android.fragments.DownloadsFragment;
+import major.com.juice_android.fragments.HomeFragment;
+import major.com.juice_android.fragments.PlaylistsFragment;
+import major.com.juice_android.fragments.SearchFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener
 {
@@ -24,12 +29,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private DownloadsFragment downloadsFragment;
     private PlaylistsFragment playlistsFragment;
 
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         homeFragment = new HomeFragment();
         searchFragment = new SearchFragment();
@@ -40,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         frameLayout = (FrameLayout)findViewById(R.id.fragment_container);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+        sharedPreferences = getSharedPreferences("loggedininfo", 0);
 
         loadFragment(homeFragment);
     }

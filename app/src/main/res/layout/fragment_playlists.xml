@@ -11,4 +11,17 @@
         android:textColor="#5689FF"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/goToSettingsButton"
+        android:text="Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/goToUserProfileButton"
+        android:text="UserProfile"
+        android:layout_below="@+id/goToSettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

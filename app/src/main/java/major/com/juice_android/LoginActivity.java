@@ -1,6 +1,7 @@
 package major.com.juice_android;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,11 @@ public class LoginActivity extends AppCompatActivity
     private EditText usernameTxt, passwordTxt;
     private Button loginButton;
     private Button goToRegistrationText;
+
+    String currentUsername;
+
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -30,6 +36,10 @@ public class LoginActivity extends AppCompatActivity
         passwordTxt = (EditText)findViewById(R.id.passwordText);
         loginButton = (Button)findViewById(R.id.loginButton);
         goToRegistrationText = (Button) findViewById(R.id.goToRegistration);
+
+        sharedPreferences = getSharedPreferences("loggedininfo", 0);
+        currentUsername = new String();
+
         loginButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -50,7 +60,8 @@ public class LoginActivity extends AppCompatActivity
 
     public void loginToApp()
     {
-        String usernameValue = usernameTxt.getText().toString();
+        final String usernameValue = usernameTxt.getText().toString();
+        currentUsername = usernameValue;
         String passwordValue = passwordTxt.getText().toString();
 
         if (usernameValue.isEmpty())
@@ -82,6 +93,10 @@ public class LoginActivity extends AppCompatActivity
 
                 if (!loginResponse.isError())
                 {
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("username", currentUsername);
+                    editor.putInt("status", 1);
+                    editor.apply();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 }

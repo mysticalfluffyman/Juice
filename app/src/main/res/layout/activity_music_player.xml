@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgMain">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/albumArtNowplaying"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:foregroundGravity="center"
+            android:src="@drawable/skymove" />
+
+        <TextView
+            android:id="@+id/songNameNowplaying"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:text="The Sky Moves Sideways"
+            android:textColor="@color/colorText1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/artistNameNowplaying"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:text="Porcupine Tree"
+            android:textColor="@color/colorText1"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/ratingNowplaying"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:background="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/addtoplaylist"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="2"
+                android:src="@drawable/ic_add_black_24dp" />
+        </LinearLayout>
+
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fff"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/currentPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="Current"/>
+            <TextView
+                android:layout_marginLeft="250dp"
+                android:id="@+id/durationNowplaying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="Duration"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/shuffleBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:clickable="true"
+                android:src="@drawable/ic_shuffle_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/previousBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="5"
+                android:clickable="true"
+                android:src="@drawable/ic_skip_previous_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/playBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="5"
+                android:clickable="true"
+                android:src="@drawable/ic_play_circle_filled_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/nextBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="5"
+
+                android:clickable="true"
+                android:src="@drawable/ic_skip_next_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/downloadBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="5"
+                android:background="@color/colorBgMain"
+                android:clickable="true"
+                android:src="@drawable/ic_arrow_downward_black_24dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

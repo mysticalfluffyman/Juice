@@ -2,7 +2,15 @@ package major.com.juice_android.model;
 
 public class Song
 {
-    private String title, artist, album, songurl, albumcoverurl;
+    private String id, title, artist, album, songurl, albumcoverurl;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

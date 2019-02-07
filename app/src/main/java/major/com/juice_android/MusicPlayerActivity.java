@@ -2,6 +2,7 @@ package major.com.juice_android;
 
 import android.app.ProgressDialog;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -18,17 +19,16 @@ import com.squareup.picasso.Picasso;
 
 import java.util.concurrent.TimeUnit;
 
-public class MusicPlayerActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener
-{
+public class MusicPlayerActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
     ImageButton prev, play, next, shuffle, download;
     ImageView albumArt;
-    TextView timeDuration, timePosition, artistName;
+    TextView timeDuration, timePosition, artistName, songName;
     SeekBar seekbar;
     private MediaPlayer mediaPlayer;
     private Runnable runnable;
     private Handler handler;
-    String link = "http://192.168.100.59/Juice/songs/testfile.mp3";
+    String link = "http://192.168.100.7/Juice/songs/testfile.mp3";
 
     String currentSongId;
     String currentSongTitle;
@@ -42,15 +42,15 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
     private ProgressDialog progressDialog;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_player);
 
         artistName = findViewById(R.id.artistNameNowplaying);
+        songName = findViewById(R.id.songNameNowplaying);
 
         progressDialog = new ProgressDialog(this);
-        albumArt = (ImageView)findViewById(R.id.albumArtNowplaying);
+        albumArt = (ImageView) findViewById(R.id.albumArtNowplaying);
         prev = findViewById(R.id.previousBtn);
         next = findViewById(R.id.nextBtn);
         play = findViewById(R.id.playBtn);
@@ -68,6 +68,10 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
         currentSongAlbumUrl = getIntent().getStringExtra("albumurl");
         currentSongMusicUrl = getIntent().getStringExtra("musicurl");
 
+        artistName.setText(currentSongArtist);
+        songName.setText(currentSongTitle);
+
+
         //mediaPlayer = MediaPlayer.create(this, R.raw.test);
 
         Picasso.with(this).load(currentSongAlbumUrl).into(albumArt);
@@ -75,96 +79,96 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
         mediaPlayer = new MediaPlayer();
         prev.setOnClickListener(this);
         next.setOnClickListener(this);
+        play.setOnClickListener(this);
         shuffle.setOnClickListener(this);
         download.setOnClickListener(this);
         prev.setOnLongClickListener(this);
         next.setOnLongClickListener(this);
 
-        play.setOnClickListener(new View.OnClickListener()
-        {
+//
+//        play.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (!playPause) {
+//                    if (initialStage) {
+//                        new Player().execute(currentSongMusicUrl);
+//
+//
+//                    } else {
+//                        if (!mediaPlayer.isPlaying())
+//                            mediaPlayer.start();
+//                        mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
+//
+//                    }
+//
+//                    playPause = true;
+//
+//                }
+//                else {
+//                    if (mediaPlayer.isPlaying()) {
+//                        mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
+//                        mediaPlayer.pause();
+//
+//                    }
+//                    playPause = false;
+//                }
+//            }
+//        });
+
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
-            public void onClick(View view)
-            {
-                if (!playPause)
-                {
-                    if (initialStage)
-                    {
-                        new Player().execute(currentSongMusicUrl
-
-                        );
-                    }
-                    else
-                    {
-                        if (!mediaPlayer.isPlaying())
-                            mediaPlayer.start();
-                    }
-
-                    playPause = true;
-
-                }
-                else
-                {
-                    if (mediaPlayer.isPlaying())
-                    {
-                        mediaPlayer.pause();
-                    }
-                    playPause = false;
-                }
-            }
-        });
-
-         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener()
-         {
-            @Override
-            public void onPrepared(MediaPlayer mp)
-            {
+            public void onPrepared(MediaPlayer mediaPlayer) {
                 seekbar.setMax(mediaPlayer.getAudioSessionId());
-            }
-         });
+                mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
+                changeTime();
+                changeSeekbar();
 
-        /*seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
-        {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
-            {
-            if (fromUser)
-            {
-                mediaPlayer.seekTo(progress);
-                seekbar.setProgress(progress);
-            }
-        }*/
 
-        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
-        {
-            boolean userTouch;
-            @Override
-            public void onStopTrackingTouch(SeekBar arg0) {
-                userTouch = false;
-            }
-            @Override
-            public void onStartTrackingTouch(SeekBar arg0) {
-                userTouch = true;
-            }
-            @Override
-            public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-                if(mediaPlayer.isPlaying() && arg2)
-                    mediaPlayer.seekTo(arg1);
             }
         });
 
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+
+            boolean userTouch;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser) {
+                    mediaPlayer.seekTo(progress);
+                    seekbar.setProgress(progress);
+                    changeSeekbar();
+                    changeTime();
+
+
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                userTouch = false;
+                changeSeekbar();
+                changeTime();
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                userTouch = true;
+
+            }
+
+
+        });
     }
 
-    private void changeSeekbar()
-    {
+    private void changeSeekbar() {
         seekbar.setProgress(mediaPlayer.getCurrentPosition());
 
-        if (mediaPlayer.isPlaying())
-        {
-            runnable = new Runnable()
-            {
+        if (mediaPlayer.isPlaying()) {
+            runnable = new Runnable() {
                 @Override
-                public void run()
-                {
+                public void run() {
                     int mediaPos_new = mediaPlayer.getCurrentPosition();
                     int mediaMax_new = mediaPlayer.getDuration();
                     seekbar.setMax(mediaMax_new);
@@ -176,15 +180,12 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
 
             handler.postDelayed(runnable, 100);
 
-        }
-        else
-        {
+        } else {
 
         }
     }
 
-    private void changeTime()
-    {
+    private void changeTime() {
 
         int duration = mediaPlayer.getDuration();
         int current = mediaPlayer.getCurrentPosition();
@@ -205,29 +206,59 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
 
 
     @Override
-    public void onClick(View v)
-    {
-        switch (v.getId())
-        {
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.playBtn:
 
-                if (mediaPlayer.isPlaying())
-                {
-                    mediaPlayer.pause();
-                    //paused state
-                    play.setBackgroundResource(R.drawable.ic_play_circle_filled_black_24dp);
-                    Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+//                if (mediaPlayer.isPlaying())
+//                {
+//                    mediaPlayer.pause();
+//                    //paused state
+//
+//                    mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
+//                    changeSeekbar();
+//                    play.setBackgroundResource(R.drawable.ic_play_circle_filled_black_24dp);
+//                    Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+//
+//                }
+//                else
+//                {
+//                    mediaPlayer.start();
+//                    mediaPlayer.seekTo(mediaPlayer.getCurrentPosition()); //play state
+//                    changeSeekbar();
+//                    play.setBackgroundResource(R.drawable.ic_pause_circle_filled_black_24dp);
+//
+//                    Toast.makeText(this, "Playing", Toast.LENGTH_SHORT).show();
+//
+//                }
+                if (!playPause) {
+                    if (initialStage) {
+                        new Player().execute(currentSongMusicUrl);
 
+
+                    } else {
+                        if (!mediaPlayer.isPlaying())
+                            mediaPlayer.start();
+                        mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
+                        changeSeekbar();
+
+
+                    }
+
+                    playPause = true;
+
+                } else {
+                    if (mediaPlayer.isPlaying()) {
+                        mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
+                        changeSeekbar();
+                        mediaPlayer.pause();
+
+                    }
+
+                    playPause = false;
                 }
-                else
-                {
-                    mediaPlayer.start();
-                    changeSeekbar(); //play state
-                    play.setBackgroundResource(R.drawable.ic_pause_circle_filled_black_24dp);
 
-                    Toast.makeText(this, "Playing", Toast.LENGTH_SHORT).show();
 
-                }
                 break;
             case R.id.previousBtn:
                 Toast.makeText(this, "Previous Button is Pressed    ", Toast.LENGTH_SHORT).show();
@@ -246,17 +277,17 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public boolean onLongClick(View v)
-    {
-        switch (v.getId())
-        {
+    public boolean onLongClick(View v) {
+        switch (v.getId()) {
             case R.id.nextBtn:
-                mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() + 5000);
-                Toast.makeText(this, "Seeked +5s", Toast.LENGTH_SHORT).show();
+                mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() + 10000);
+                changeSeekbar();
+                Toast.makeText(this, "Seeked +10s", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.previousBtn:
-                mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() - 5000);
-                Toast.makeText(this, "Seeked -5s", Toast.LENGTH_SHORT).show();
+                mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() - 10000);
+                changeTime();
+                Toast.makeText(this, "Seeked -105s", Toast.LENGTH_SHORT).show();
                 break;
 
 
@@ -264,33 +295,28 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
         return false;
     }
 
-    class Player extends AsyncTask<String, Void, Boolean>
-    {
+    class Player extends AsyncTask<String, Void, Boolean> {
         @Override
-        protected Boolean doInBackground(String... strings)
-        {
+        protected Boolean doInBackground(String... strings) {
             Boolean prepared = false;
 
-            try
-            {
+            try {
                 mediaPlayer.setDataSource(strings[0]);
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
-                {
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
-                    public void onCompletion(MediaPlayer mediaPlayer)
-                    {
+                    public void onCompletion(MediaPlayer mediaPlayer) {
                         initialStage = true;
                         playPause = false;
                         mediaPlayer.stop();
                         mediaPlayer.reset();
+
                     }
                 });
 
                 mediaPlayer.prepare();
                 prepared = true;
 
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 Log.e("MyAudioStreamingApp", e.getMessage());
                 prepared = false;
             }
@@ -299,12 +325,10 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean)
-        {
+        protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
 
-            if (progressDialog.isShowing())
-            {
+            if (progressDialog.isShowing()) {
                 progressDialog.cancel();
             }
 
@@ -313,12 +337,12 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
         }
 
         @Override
-        protected void onPreExecute()
-        {
+        protected void onPreExecute() {
             super.onPreExecute();
 
             progressDialog.setMessage("Buffering...");
             progressDialog.show();
+
         }
     }
 }

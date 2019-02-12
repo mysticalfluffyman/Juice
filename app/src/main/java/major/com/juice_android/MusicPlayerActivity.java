@@ -28,7 +28,7 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
     private MediaPlayer mediaPlayer;
     private Runnable runnable;
     private Handler handler;
-    String link = "http://192.168.100.7/Juice/songs/testfile.mp3";
+    String link = "http://192.168.0.105/Juice/songs/testfile.mp3";
 
     String currentSongId;
     String currentSongTitle;

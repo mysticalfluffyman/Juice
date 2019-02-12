@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.List;
 
+import major.com.juice_android.MainActivity;
 import major.com.juice_android.R;
 import major.com.juice_android.api.RetrofitClient;
 import major.com.juice_android.model.Song;
@@ -30,6 +31,8 @@ public class HomeFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
+        ((MainActivity)getActivity()).setActionBarTitle("Home");
+
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 

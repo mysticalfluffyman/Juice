@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import major.com.juice_android.MainActivity;
 import major.com.juice_android.R;
 
 public class SearchFragment extends Fragment
@@ -16,6 +17,7 @@ public class SearchFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
+        ((MainActivity)getActivity()).setActionBarTitle("Search");
 
         return inflater.inflate(R.layout.fragment_search, container, false);
     }

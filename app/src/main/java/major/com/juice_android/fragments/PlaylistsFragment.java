@@ -25,6 +25,7 @@ public class PlaylistsFragment extends Fragment
     {
 
         View view = inflater.inflate(R.layout.fragment_playlists, container, false);
+        ((MainActivity)getActivity()).setActionBarTitle("Playlist");
 
         goToSettingsButton = (Button)view.findViewById(R.id.goToSettingsButton);
         goToUserProfileButton = (Button)view.findViewById(R.id.goToUserProfileButton);

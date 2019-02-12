@@ -13,6 +13,7 @@
         android:layout_height="45dp"
         android:text="Most Played"
         android:textSize="30sp"
+        android:background="@color/colorPrimary"
         android:textAlignment="center"
         android:textColor="#FFFEFE"
         />
@@ -33,6 +34,7 @@
         android:layout_height="45dp"
         android:text="Trending"
         android:textSize="30sp"
+        android:background="@color/colorPrimary"
         android:textAlignment="center"
         android:textColor="#FFFEFE"/>
   <android.support.v7.widget.RecyclerView
@@ -49,6 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="Recently Added"
+        android:background="@color/colorPrimary"
         android:textSize="30sp"
         android:textAlignment="center"
         android:textColor="#FFFEFE"/>
@@ -64,6 +67,7 @@
     </android.support.v7.widget.RecyclerView>
     <TextView
         android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
         android:layout_height="45dp"
         android:text="Recommended Songs"
         android:textSize="30sp"
@@ -84,6 +88,7 @@
         android:layout_height="45dp"
         android:text="Recommended Artists"
         android:textSize="30sp"
+        android:background="@color/colorPrimary"
         android:textAlignment="center"
         android:textColor="#FFFEFE"/>
     <android.support.v7.widget.RecyclerView
@@ -102,6 +107,7 @@
         android:text="Most Rated Playlist"
         android:textSize="30sp"
         android:textAlignment="center"
+        android:background="@color/colorPrimary"
         android:textColor="#FFFEFE"/>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

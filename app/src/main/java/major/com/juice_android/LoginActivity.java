@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t)
             {
-
+                Toast.makeText(LoginActivity.this, "Laptop ta on Gara yar", Toast.LENGTH_SHORT).show();
             }
         });
 

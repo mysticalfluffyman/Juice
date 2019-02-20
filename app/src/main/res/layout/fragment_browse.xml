@@ -4,254 +4,267 @@
     android:layout_width="match_parent"
     >
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    >
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:gravity="center">
-      <android.support.v7.widget.CardView
-          android:layout_width="160dp"
-          android:layout_height="200dp"
-          android:elevation="2dp"
-          app:cardMaxElevation="3dp"
-          android:layout_margin="10dp"
-          android:id="@+id/rock_Browse">
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              >
-              <ImageView
-                  android:layout_width="100dp"
-                  android:layout_height="100dp"
-                  android:layout_gravity="center_horizontal"
-                  android:scaleType="centerCrop"
-
-                  android:layout_marginTop="30dp"
-                  />
-              <TextView
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:gravity="center_horizontal"
-                  android:text="Rock"
-                  android:textSize="28sp"
-                  android:textStyle="italic"/>
-          </LinearLayout>
-
-
-      </android.support.v7.widget.CardView>
-      <android.support.v7.widget.CardView
-          android:layout_width="160dp"
-          android:layout_height="200dp"
-          android:elevation="2dp"
-          app:cardMaxElevation="3dp"
-          android:layout_margin="10dp"
-          android:id="@+id/metal_Browse">
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              >
-              <ImageView
-                  android:layout_width="100dp"
-                  android:layout_height="100dp"
-                  android:layout_gravity="center_horizontal"
-                  android:scaleType="centerCrop"
-
-                  android:layout_marginTop="30dp"
-                  />
-              <TextView
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:gravity="center_horizontal"
-                  android:text="Metal"
-                  android:textSize="28sp"
-                  android:textStyle="italic"/>
-          </LinearLayout>
-
-
-      </android.support.v7.widget.CardView>
-  </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <android.support.v7.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="200dp"
-            android:elevation="2dp"
-            app:cardMaxElevation="3dp"
-            android:layout_margin="10dp"
-            android:id="@+id/hiphop_Browse">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-               >
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="centerCrop"
-
-                    android:layout_marginTop="30dp"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Hip-Hop"
-                    android:textSize="28sp"
-                    android:textStyle="italic"/>
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="200dp"
-            android:elevation="2dp"
-            app:cardMaxElevation="3dp"
-            android:layout_margin="10dp"
-            android:id="@+id/folk_Browse">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="centerCrop"
-
-                    android:layout_marginTop="30dp"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Folk"
-                    android:textSize="28sp"
-                    android:textStyle="italic"/>
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <android.support.v7.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="200dp"
-            android:elevation="2dp"
-            app:cardMaxElevation="3dp"
-            android:layout_margin="10dp"
-            android:id="@+id/electronic_Browse">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="centerCrop"
-
-                    android:layout_marginTop="30dp"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Electronic"
-                    android:textSize="28sp"
-                    android:textStyle="italic"/>
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="200dp"
-            android:elevation="2dp"
-            app:cardMaxElevation="3dp"
-            android:layout_margin="10dp"
-            android:id="@+id/ninety_Browse">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-               >
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="centerCrop"
-
-                    android:layout_marginTop="30dp"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="90's "
-                    android:textSize="28sp"
-                    android:textStyle="italic"/>
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         >
-        <android.support.v7.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="200dp"
-            android:elevation="2dp"
-            app:cardMaxElevation="3dp"
-            android:layout_margin="10dp"
-            android:id="@+id/classical_Browse">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="centerCrop"
-
-                    android:layout_marginTop="30dp"
-                    />
-                <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:elevation="2dp"
+                app:cardMaxElevation="3dp"
+                android:layout_margin="10dp"
+                android:id="@+id/rock_Browse">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Classical"
-                    android:textSize="28sp"
-                    android:textStyle="italic"/>
-            </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_browse_card"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_icons8_rock_music_480"
+                        android:layout_marginTop="30dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Rock"
+                        android:textSize="28sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
 
 
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:elevation="2dp"
+                app:cardMaxElevation="3dp"
+                android:layout_margin="10dp"
+                android:id="@+id/metal_Browse">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_browse_card"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_metal_music"
+                        android:layout_marginTop="30dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Metal"
+                        android:textSize="28sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
 
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:elevation="2dp"
+                app:cardMaxElevation="3dp"
+                android:layout_margin="10dp"
+                android:id="@+id/hiphop_Browse">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_browse_card"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_hip_hop_music"
+                        android:layout_marginTop="30dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Hip-Hop"
+                        android:textSize="28sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:elevation="2dp"
+                app:cardMaxElevation="3dp"
+                android:layout_margin="10dp"
+                android:id="@+id/folk_Browse">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_browse_card"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_folk_music"
+                        android:layout_marginTop="30dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Folk"
+                        android:textSize="28sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:elevation="2dp"
+                app:cardMaxElevation="3dp"
+                android:layout_margin="10dp"
+                android:id="@+id/electronic_Browse">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_browse_card"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_electronic_music"
+                        android:scaleType="centerCrop"
+
+                        android:layout_marginTop="30dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Electronic"
+                        android:textSize="28sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:elevation="2dp"
+                app:cardMaxElevation="3dp"
+                android:layout_margin="10dp"
+                android:id="@+id/ninety_Browse">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_browse_card"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_90s_music"
+
+                        android:layout_marginTop="30dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="90's "
+                        android:textSize="28sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+
+            >
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:elevation="2dp"
+                app:cardMaxElevation="3dp"
+                android:layout_marginLeft="37dp"
+                android:layout_gravity="center_horizontal"
+
+                android:id="@+id/classical_Browse">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_browse_card"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_classic_music"
+                        android:layout_marginTop="30dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Classical"
+                        android:textSize="28sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 
 </ScrollView>

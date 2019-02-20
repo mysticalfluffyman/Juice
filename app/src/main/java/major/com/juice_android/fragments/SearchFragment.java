@@ -51,7 +51,6 @@ public class SearchFragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        Toast.makeText(getContext(), "Reached here", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -89,7 +88,6 @@ public class SearchFragment extends Fragment
                     public void onResponse(Call<SearchSongResponse> call, Response<SearchSongResponse> response)
                     {
                         songList = response.body().getSongs();
-                        //store = response.body().getMessage();
                         for (int i = 0; i<songList.size(); i++)
                         {
                             Log.d("responsedata", songList.get(i).getTitle());

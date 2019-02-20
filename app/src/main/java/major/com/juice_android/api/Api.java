@@ -2,6 +2,7 @@ package major.com.juice_android.api;
 
 import major.com.juice_android.model.DefaultResponse;
 import major.com.juice_android.model.LoginResponse;
+import major.com.juice_android.model.SearchSongResponse;
 import major.com.juice_android.model.SongResponse;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -30,5 +31,11 @@ public interface Api
 
     @GET("allsongs")
     Call<SongResponse> getSongs();
+
+    @FormUrlEncoded
+    @POST("searchsongs")
+    Call<SearchSongResponse> searchSongs(
+      @Field("keyword") String keyword
+    );
     
 }

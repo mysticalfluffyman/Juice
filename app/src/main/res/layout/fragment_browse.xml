@@ -26,13 +26,13 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:background="@drawable/gradient_browse_card">
+              >
               <ImageView
                   android:layout_width="100dp"
                   android:layout_height="100dp"
                   android:layout_gravity="center_horizontal"
                   android:scaleType="centerCrop"
-                  android:src="@drawable/ic_icons8_rock_music_480"
+
                   android:layout_marginTop="30dp"
                   />
               <TextView
@@ -57,13 +57,13 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:background="@drawable/gradient_browse_card">
+              >
               <ImageView
                   android:layout_width="100dp"
                   android:layout_height="100dp"
                   android:layout_gravity="center_horizontal"
                   android:scaleType="centerCrop"
-                  android:src="@drawable/ic_metal_music"
+
                   android:layout_marginTop="30dp"
                   />
               <TextView
@@ -94,13 +94,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/gradient_browse_card">
+               >
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_hip_hop_music"
+
                     android:layout_marginTop="30dp"
                     />
                 <TextView
@@ -125,13 +125,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/gradient_browse_card">
+                >
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_folk_music"
+
                     android:layout_marginTop="30dp"
                     />
                 <TextView
@@ -162,13 +162,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/gradient_browse_card">
+                >
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_electronic_music"
+
                     android:layout_marginTop="30dp"
                     />
                 <TextView
@@ -193,13 +193,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/gradient_browse_card">
+               >
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_90s_music"
+
                     android:layout_marginTop="30dp"
                     />
                 <TextView
@@ -230,13 +230,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/gradient_browse_card">
+                >
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_classic_music"
+
                     android:layout_marginTop="30dp"
                     />
                 <TextView

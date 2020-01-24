@@ -20,9 +20,10 @@ public class LoginActivity extends AppCompatActivity
 {
     private EditText usernameTxt, passwordTxt;
     private Button loginButton;
-    private Button goToRegistrationText;
+    private TextView goToRegistrationText;
 
     String currentUsername;
+    String currentUserpassword;
 
     SharedPreferences sharedPreferences;
 
@@ -35,10 +36,12 @@ public class LoginActivity extends AppCompatActivity
         usernameTxt = (EditText)findViewById(R.id.usernameText);
         passwordTxt = (EditText)findViewById(R.id.passwordText);
         loginButton = (Button)findViewById(R.id.loginButton);
-        goToRegistrationText = (Button) findViewById(R.id.goToRegistration);
+        goToRegistrationText =  findViewById(R.id.goToRegistration);
 
         sharedPreferences = getSharedPreferences("loggedininfo", 0);
         currentUsername = new String();
+        currentUserpassword = new String();
+
 
         loginButton.setOnClickListener(new View.OnClickListener()
         {
@@ -63,6 +66,7 @@ public class LoginActivity extends AppCompatActivity
         final String usernameValue = usernameTxt.getText().toString();
         currentUsername = usernameValue;
         String passwordValue = passwordTxt.getText().toString();
+        currentUserpassword=passwordValue;
 
         if (usernameValue.isEmpty())
         {
@@ -95,6 +99,7 @@ public class LoginActivity extends AppCompatActivity
                 {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("username", currentUsername);
+                    editor.putString("password",currentUserpassword);
                     editor.putInt("status", 1);
                     editor.apply();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));

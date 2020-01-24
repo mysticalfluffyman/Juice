@@ -2,7 +2,15 @@ package major.com.juice_android.model;
 
 public class User
 {
-    private String username, name, password, phone, email;
+    private String id, username, name, password, phone, email;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUsername()
     {

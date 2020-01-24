@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <LinearLayout
@@ -30,7 +30,7 @@
             android:inputType="text"
             android:textColor="@color/colorText1"
             android:padding="5dp"
-            android:textColorHint="#fff" />
+            android:textColorHint="#222121" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,7 +53,7 @@
             android:inputType="textPassword"
             android:padding="5dp"
             android:textColor="@color/colorText1"
-            android:textColorHint="#fff" />
+            android:textColorHint="#131212" />
     </LinearLayout>
 
 
@@ -73,18 +73,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Dont Have an Account ?"
+        android:id="@+id/goToRegistration"
         android:textColor="@color/colorText1" />
 
-    <Button
-        android:id="@+id/goToRegistration"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button_styles"
-        android:text="Register!!"
-        android:textColor="@color/colorText1"
-        android:textSize="20dp" />
+
 
 
 </LinearLayout>

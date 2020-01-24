@@ -37,6 +37,7 @@
                 android:layout_below="@id/albumCover"
                 android:textAlignment="center"
                 android:hint="Song Name"
+                android:textColor="@color/colorBgMain"
                 />
             <TextView
                 android:layout_width="140dp"
@@ -44,6 +45,7 @@
                 android:background="@color/colorPrimary"
                 android:id="@+id/ArtistName"
                 android:textAlignment="center"
+                android:textColor="@color/colorBgMain"
                 android:layout_below="@id/SongName"/>
 
         </RelativeLayout>

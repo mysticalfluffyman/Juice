@@ -1,6 +1,7 @@
 package major.com.juice_android.viewadapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import com.squareup.picasso.Picasso;
+
+import major.com.juice_android.MusicPlayerActivity;
 import major.com.juice_android.R;
 import major.com.juice_android.model.Song;
 
@@ -42,6 +45,22 @@ public class SearchListAdapter extends ArrayAdapter<Song>
         searchTitle.setText(song.getTitle());
         searchArtist.setText(song.getArtist());
         Picasso.with(this.context).load(song.getAlbumcoverurl()).into(searchImage);
+
+        cardView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(context, MusicPlayerActivity.class);
+                intent.putExtra("songid", song.getId());
+                intent.putExtra("artistname", song.getArtist());
+                intent.putExtra("albumname", song.getAlbum());
+                intent.putExtra("titlename", song.getTitle());
+                intent.putExtra("albumurl", song.getAlbumcoverurl());
+                intent.putExtra("musicurl", song.getSongurl());
+                context.startActivity(intent);
+            }
+        });
 
         return view;
     }

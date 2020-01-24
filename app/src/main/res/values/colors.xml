@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1C1D20</color>
-    <color name="colorPrimaryDark">#1F1D1D</color>
+    <color name="colorPrimary">#FDFDFD</color>
+    <color name="colorPrimaryDark">#A39F9F</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
     <color name="bottomNavColor">#312f2f</color>
     <color name="colorBG1">#4d4d51</color>
-    <color name="colorBgMain">#000000</color>
-    <color name="colorText1">#ffffff</color>
+    <color name="colorBgMain">#0C0C0C</color>
+    <color name="colorText1">#0A0A0A</color>
     <color name="startblue">#09c6df</color>
     <color name="endblue">#0bcce6</color>
+    <!-- A transparent black -->
+
+
+    <color name="transparent_black">#aa000000</color>
+
+    <!-- selected tab text -->
+
+
+    <color name="selected_tabtext">#bb000000</color>
+
+    <!-- non selected tab text -->
+
+
+    <color name="unselected_tabtext">#77000000</color>
+
+    <color name="shuffle_grey">#ffdedede</color>
+
+    <color name="background_grey">#ffdedede</color>
+
+    <!-- Transparent -->
+
+
+    <color name="transparent">#00000000</color>
+
+    <!-- Black -->
+
+
+    <color name="black">#ff000000</color>
 
 </resources>

@@ -1,5 +1,6 @@
 package major.com.juice_android.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import major.com.juice_android.GenreListActivity;
 import major.com.juice_android.MainActivity;
 import major.com.juice_android.R;
 
@@ -38,43 +40,58 @@ public class BrowseFragment extends Fragment {
         metal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "HEAD FUCKING BANG", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), GenreListActivity.class);
+                intent.putExtra("genreid", "2");
+                startActivity(intent);
             }
         });
         ninety.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "90's BITCH", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), GenreListActivity.class);
+                intent.putExtra("genreid", "6");
+                startActivity(intent);
             }
         });
         rock.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "DWYANE FUCKING JOHNSON", Toast.LENGTH_SHORT).show();
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(getActivity(), GenreListActivity.class);
+                intent.putExtra("genreid", "1");
+                startActivity(intent);
             }
         });
         classical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Classical", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), GenreListActivity.class);
+                intent.putExtra("genreid", "7");
+                startActivity(intent);
             }
         });
         hiphop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "BITCH", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), GenreListActivity.class);
+                intent.putExtra("genreid", "3");
+                startActivity(intent);
             }
         });
         folk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Folk", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), GenreListActivity.class);
+                intent.putExtra("genreid", "2");
+                startActivity(intent);
             }
         });
         electronic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Electronic", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), GenreListActivity.class);
+                intent.putExtra("genreid", "5");
+                startActivity(intent);
             }
         });
 
